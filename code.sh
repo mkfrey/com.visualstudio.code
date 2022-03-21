@@ -60,7 +60,7 @@ for i in "${SDK[@]}"; do
   fi
 done
 
-exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
+exec env ZYPAK_SPAWN_LATEST_ON_REEXEC=0 ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
   /app/bin/zypak-wrapper.sh /app/extra/vscode/code /app/extra/vscode/resources/app/out/cli.js \
   --ms-enable-electron-run-as-node --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
   "$@" ${WARNING_FILE}
